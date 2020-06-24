@@ -45,7 +45,7 @@ export const Content = styled.div`
   > a {
     color: #ff9000;
     text-decoration: none;
-    /* display: block; */
+    display: block;
     margin-top: 24px;
     transition: color 0.2s;
 
@@ -55,6 +55,7 @@ export const Content = styled.div`
     &:hover {
       color: ${shade(0.2, '#ff9000')};
     }
+
     svg {
       margin-right: 16px;
     }
@@ -63,6 +64,6 @@ export const Content = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signInBackground}) no-repeat;
+  background: url(${signInBackground}) no-repeat center;
   background-size: cover;
 `;
