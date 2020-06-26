@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useContext } from 'react';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 
 import { FormHandles } from '@unform/core';
@@ -6,6 +6,7 @@ import { Form } from '@unform/web';
 
 import * as Yup from 'yup';
 
+import AuthContext from '../../context/AuthContext';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import logoImg from '../../assets/logo.svg';
@@ -17,6 +18,10 @@ import { Container, Content, Background } from './styles';
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+
+  const auth = useContext(AuthContext);
+
+  console.log(auth);
 
   const handleSubmit = useCallback(async (data: object) => {
     try {
